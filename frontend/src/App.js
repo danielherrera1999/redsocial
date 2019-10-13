@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import Navbar from './components/Navbar';
 import UsersComponent from "./components/UsersComponent";
+import RegistroComponent from "./components/registroComponent";
 
 class App extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class App extends React.Component {
        <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/users" component={UsersComponent} />
+        <Route exact path="/registre" component={RegistroComponent} />
         <Route
           render={function () {
             return <h3>Lo sentimos, esta página no está disponible</h3>;
