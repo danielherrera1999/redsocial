@@ -1,0 +1,67 @@
+{{#if user.Datos}}
+<script>
+    window.location.replace("http://localhost:8081/Home");
+</script>
+{{else}}
+<div class="container">
+    <div class="row d-flex justify-content-center my-5">
+        <div class="col">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2>Configuracion de datos</h2>
+                    </div>
+                </div>
+                <hr>
+                <form action="/Editar_User/{{user._id}}?_method=PUT" method="POST" class="p-5">
+                <input type="hidden" name="_method" value="PUT">
+                    <div class="row">
+                        <div class="col form-group">
+                            <input type="text" name="FullName" id="" class="form-control" value=" {{user.FullName}} "  placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <input type="email" name="Email" class="form-control" id="" placeholder="Correo Electronico" value=" {{user.Email}} " >
+                        </div>
+                        <div class="col form-group">
+                            <input type="text" name="Phone" id="" placeholder="Phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Genero</label>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col">
+                                    <label>Masculino</label>
+                                    <input type="radio" name="Genero" value="1" checked>
+                                </div>
+                                <div class="col">
+                                    <label>Femenino</label>
+                                    <input type="radio" name="Genero" value="2">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col form-group">
+                            <label for="">Fecha del cumpleaños</label>
+                            <input type="date" name="Birth" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-end">
+                            <a href="/Omitir/{{user._id}}" class="btn btn-outline-secondary btn-lg">Omitir</a>
+
+                            <button type="submit" class="btn btn-outline-primary btn-lg">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

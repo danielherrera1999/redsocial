@@ -1,0 +1,60 @@
+{{#if user.Datos}}
+
+{{>header}}
+
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-lg-2 border"></div>
+        <div class="col-lg-6 border">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <h2>Publicaciones</h2>
+                        <form action="/add-public" method="POST" enctype="multipart/form-data" >
+                            <div class="form-group">
+                                <textarea name="Estado" id="" cols="15" rows="5" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="Image" id="">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Publicar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col mb-1">
+                        {{#if Publics}}
+                        {{#each Publics}}
+                        <div class="card" style="">
+                            <img src="/publicaciones/{{Image}}" class="card-img-top" style="height: 35rem"  alt="...">
+                            <div class="card-body">
+                                <p class="card-text">{{Estado}}</p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                   <a href="" >Me gusta</a> |
+                                   <a href="" >Comentario</a> 
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 border">
+            <ul>
+                <li>
+                    Nombre (Conectado)
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{else}}
+<script>
+    window.location.replace("http://localhost:8081/Datos");
+</script>
+{{/if}}

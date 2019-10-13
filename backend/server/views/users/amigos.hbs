@@ -1,0 +1,63 @@
+{{#if user.Datos}}
+
+{{>header}}
+<div class="container-fluid">
+    <div class="row mx-auto">
+        <div class="col-lg-6 border-right">
+            <H2 class="text-center" > Solicitud recibida o enviadas </H2>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <h3>Recibida</h3>
+                    <div class="col">
+                        <ul>
+                        {{#each SendOrRecived}}
+                            {{#if Send_Resquest}}
+
+                            {{else}}
+                            <li>Nombre  (<a href="">Agregar</a> || <a href="">Eliminar</a> ) </li>
+                            {{/if}}
+                        {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>Nombre  (<a href="">Agregar</a> || <a href="">Eliminar</a> ) </li>
+                        </ul>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="col-lg-6 border-left">
+            <H2 class="text-center">
+                 Personas buscar 
+                 </H2>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            {{#each forUser}}
+                                {{#if send}}
+
+                                {{else}}
+                            <li>
+                                {{FullName}}
+                                    (<a href="/add-friends/{{id}}">Enviar Solicitud</a>)
+                            </li>
+                                {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{else}}
+<script>
+    window.location.replace("http://localhost:8081/Datos");
+</script>
+{{/if}}

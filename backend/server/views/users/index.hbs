@@ -1,0 +1,91 @@
+<div class="container m-4">
+    <div class="row">
+        <div class="col-lg-6 border-right">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <H3>LOGIN</H3>
+                    </div>
+                </div>
+                <form action="/Loguearse" method="POST">
+                    <div class="row form-group">
+                        <div class="col">
+                            <input type="text" name="email" class="form-control" id="" placeholder="Email" autofocus>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <input type="password" name="password" class="form-control" id="" placeholder="Contraseña">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <button type="submit" class="btn btn-outline-primary">Iniciar Sesion</button>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <a href="/auten/facebook/callback">Iniciar Sesion con facebook</a>
+            </div>
+        </div>
+        <div class="col-lg-6 border-left">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3>REGISTRARSE</h3>
+                    </div>
+                </div>
+                <form action="/add-user" method="POST">
+                    <div class="row form-group">
+                        <div class="col">
+                            <input type="text" name="FullName" class="form-control" id="" value="{{FullName}}"
+                                placeholder="Nombre" autofocus>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <input type="email" name="Email" class="form-control" id="" value="{{Email}}"
+                                placeholder="Correo Electronico">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <label>Genero</label>
+                        </div>
+                        <div class="col">
+                            <label>Masculino</label>
+                            <input type="radio" name="Genero" value="1">
+                        </div>
+                        <div class="col">
+                            <label>Femenino</label>
+                            <input type="radio" name="Genero" value="2">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <input type="password" name="Password" id="" value="{{Password}}" class="form-control"
+                                placeholder="Contraseña">
+                        </div>
+                        <div class="col">
+                            <input type="password" name="Confirme_Password" value="{{Confirme_Password}}" name="" id=""
+                                class="form-control" placeholder="Repetir Contraseña">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button type="submit" class="btn btn-outline-success btn-block">Registrarme</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            {{>errors}}
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
