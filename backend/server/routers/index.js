@@ -3,6 +3,7 @@ const User = require('../models/Users');
 const Public = require('../models/Publics');
 const Friend = require('../models/Friends');
 const { isAuthenticated } = require('../helpers/auth');
+const withAuth = require('../middleware');
 
 
 
@@ -14,13 +15,13 @@ Router.get('/Datos', (req,res) => {
     res.render('users/datos');
 });
 
-Router.get('/Home', isAuthenticated,async(req,res) => {
+Router.get('/Home', withAuth,async(req,res) => {
     const user = req.user._id;
     const Publics = await Public.find({user: user});
     res.render('users/home', {Publics});
 });
 
-Router.get('/Friends',  isAuthenticated,async(req,res) => {
+Router.get('/Friends',  withAuth,async(req,res) => {
     const myid = req.user._id
     //Mostrando usuario
     const forUser = await User.find({_id:{$ne:myid}});
@@ -35,10 +36,10 @@ Router.get('/Friends',  isAuthenticated,async(req,res) => {
     res.render('users/amigos', {forUser,SendOrRecived});
 });
 
-Router.get('/users', async(req,res)=>{
+/*Router.get('/users', async(req,res)=>{
     const usuario = await User.find();
     res.json(usuario);
-});
+});*/
 
 
 module.exports = Router;
