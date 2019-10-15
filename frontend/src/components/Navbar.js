@@ -18,9 +18,9 @@ export default class Navbar extends Component {
 
         return (
             <Router>
-                <MDBNavbar color="green" dark expand="md">
+                <MDBNavbar className="bg-success" dark expand="md">
                     <MDBNavbarBrand>
-                        <strong className="white-text">Navbar</strong>
+                        <strong className="white-text">...............</strong>
                     </MDBNavbarBrand>
                     <MDBNavbarToggler onClick={this.toggleCollapse} />
                     <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>

@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import image from './perfil.jpg';
-import { MDBCardImage } from 'mdbreact';
+import perfil from './perfil.jpg';
 
 
 export default class SiderNav extends Component {
   render() {
     return (
-      <SideNav onSelect={(selected) => { }}>
+      <SideNav className="bg-success text-white mt-8" onSelect={(selected) => { }}>
         <SideNav.Toggle />
         <SideNav.Nav className="mt-8" defaultSelected="home">
-          <NavItem eventKey="perfil">
-            <NavItem>
-              <MDBCardImage>
-                <img src={image} />
-              </MDBCardImage>
-            </NavItem>
-            <NavText>
-              perfil
-            </NavText>
-          </NavItem>
-          <NavItem eventKey="home">
+            <div>
+              <a>
+              <img src={perfil} style={{ width: '100px', height: '100px', borderRadius: '50px' }} className="p-3 ml-auto "></img>
+              </a>
+            </div>
+          <br />
+          <NavItem eventKey="home" >
             <NavIcon>
               <i className="fa fa-fw fa-home" style={{ fontSize: '1.3em' }} />
             </NavIcon>

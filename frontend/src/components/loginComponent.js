@@ -17,7 +17,7 @@ const LoginComponent = () => {
     return (
       <MDBContainer>
       <MDBRow >
-        <MDBCol md="6" className="mx-auto">
+        <MDBCol md="6" className="mx-auto p-5">
           <MDBCard>
             <MDBCardBody>
               <MDBCardHeader className="form-header text-center">
