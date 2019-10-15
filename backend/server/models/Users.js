@@ -14,8 +14,8 @@ const UserSchema = new Schema({
     Datos: {type:String, default: ""},
     date: { type: Date, default: Date.now},
     send: {type:String, default:""},
-    provider: {type:String, default:""},
-    provider_id: {type:String, default:""},
+    //provider: {type:String, default:""},
+    //provider_id: {type:String, default:""},
     
 });
 
@@ -25,8 +25,14 @@ UserSchema.methods.encryptPassword = async (Password) => {
     return hash;
  };
  
- UserSchema.methods.matchPassword = async function(password){
-     return await bcrypt.compare(password, this.Password);
+ UserSchema.methods.matchPassword = async function(password, callback){
+     return await bcrypt.compare(password, this.Password, (err,same) => {
+        if(err){
+            callback(err);
+        }else{
+            callback(err,same)
+        }
+     });
  };
 
 module.exports = mongoose.model('User', UserSchema);

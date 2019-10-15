@@ -8,6 +8,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const morgan = require('morgan');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 //bd
 require('./database');
@@ -29,6 +30,7 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 //Middlewares
+app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(override('_method'));

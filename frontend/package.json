@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@trendmicro/react-sidenav": "^0.4.5",
+    "axios": "^0.19.0",
     "mdbreact": "^4.21.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -16,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:8081/api/fetbook",
   "eslintConfig": {
     "extends": "react-app"
   },
