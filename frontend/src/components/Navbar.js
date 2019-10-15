@@ -44,11 +44,6 @@ export default class Navbar extends Component {
                             </MDBNavItem>
                             <MDBNavItem>
                                 <MDBNavLink className="waves-effect waves-light" to="#!">
-                                <i class="fas fa-comments"></i>
-                                </MDBNavLink>
-                            </MDBNavItem>
-                            <MDBNavItem>
-                                <MDBNavLink className="waves-effect waves-light" to="#!">
                                     <i class="fas fa-bell"></i>
                                 </MDBNavLink>
                             </MDBNavItem>
